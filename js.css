@@ -1,0 +1,22 @@
+@font-face
+{
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1
+{
+	font-family: Dayrom, serif;
+	margin:2%;
+	font-size:30px;
+}
+
+#section 
+{
+	color :rgb(255,0,0);
+}
+
+img[id ="fr"]
+{
+	width:10%;
+}

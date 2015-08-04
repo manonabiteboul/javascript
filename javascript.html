@@ -1,0 +1,208 @@
+<html>
+    
+	<head>
+		<script type = "text/javascript" >
+			function conversion(taux, unit1, unit2)
+				{
+					fr=prompt("Entrez la valeur a convertir en "+unit1);
+					alert(fr+ " "+ unit1+" correspond a " + taux*fr + " "+unit2);
+				}
+
+
+
+			function promptplus()
+				{
+					a =prompt("enter the first nb");
+					b =prompt("enter the second nb");
+					
+					alert(a+ "+"+ b+" = " + plus(a,b));
+				}
+			
+			function plus(a,b)
+				{
+					return( parseFloat(a)+parseFloat(b))
+				}
+			
+			function costaud()
+				{
+					taille = prompt("Quelle est votre taille");
+					poid = prompt("Quelle est votre poid");
+					costaud= (taille>= 30 && poid>=30);
+					if (costaud)
+						alert("Vous etes costaud");
+					else 
+						alert("Vous n'etes pas costaud");
+					
+				}
+			function majeur()
+				{
+					if (prompt("How old are you?") >18)
+						alert("You can drink alcohol!");
+					else
+						alert("You can't drink alcohol!")
+				}
+				
+			function langue()
+				{
+					l=prompt("What language do you speak?");
+					switch(l)
+					{
+						case "francais":
+							alert("Bonjour");
+							break;
+						case "english":
+							alert("Hello");
+							break;
+						case "espagnol":
+							alert("Ola");
+							break;
+						default:
+							alert("I don't speak this language")
+							break;
+					}
+				}
+				
+				function boucle() 
+				{
+					total=0;
+					max=prompt("What number do you want to count to?");
+					for(i=0;i<=max;i++)
+					{
+						total=total+i;
+						alert(i);
+					}
+					alert("Voici le total: "+total);
+				}
+				
+
+				function nb_aleatoire(min, max)
+				{
+				var nb = min + (max-min+1)*Math.random();
+				return Math.floor(nb);
+				}
+				
+				function pom(min,max)
+				{
+					count = 1;
+					n=nb_aleatoire(min,max);
+					guess=prompt("Guess the number between "+min+" and "+max);
+				
+					while(guess!=n)
+					{
+						count++;
+						if( guess < n)
+							guess = prompt("more")
+						else 
+							guess = prompt("less")
+					}
+					alert("You found the right number "+guess+" in "+ count+ " times");
+					return(count)
+				}
+				function play()
+				{
+				continuer=confirm("Do you want to play less or more?");
+				if(continuer)
+				{
+					min=prompt("The computer will pick a random number you will have to guess in a range. First you need to pick the range, what is the minimum?");
+					max=prompt("what is the maximum");
+				}
+				manches=0;
+				best_result=Infinity;
+				
+				
+				while(continuer)
+				{
+					manches= manches+1;
+					result_now=pom(min,max);
+					if (best_result==Infinity)
+					{
+						best_result = result_now;
+					}
+					else if (result_now< best_result)
+					{
+						best_result= result_now;
+					}
+					
+					continuer=confirm("You have played "+manches+" times and your best score is "+best_result+" would you like to play again?");
+				}
+				
+				}
+				
+				function lire(tab)
+				{
+					var chaine = "Le tableau contient:";
+					for (i=0;i<tab.length;i++)
+						chaine+= "\n"+i+" --> "+tab[i];
+					return(chaine)
+				
+				}
+				
+				function lire2(tab)
+				{
+					var chaine = "2eme type de loop";
+					for (i in tab)
+						chaine+= "\n"+i+" --> "+tab[i];
+					return(chaine)
+				
+				}
+				
+				function moyenne(tab)
+				{
+					var total=0;
+					var m=tab.length;
+					for (i in tab)
+						total+= tab[i];
+					return(total/m);
+				
+				}
+			
+				
+			
+		</script>
+		
+        <meta charset = "utf-8" />
+        <link rel="stylesheet" href="js.css" />
+        <title> Javascript </title>
+    </head>
+ 
+    <body>
+		
+	
+		<h1> Here are all the things I've done in Javascript so far. </br> Thanks for looking at it. </h1>
+		
+		<div id = "section">
+		Click on what you would like to do: </br>
+			<a href=# onclick="promptplus()"> Add two numbers </a> </br>
+		<!--	<a href=# onclick="costaud()"> Are you fit? </a> </br> -->
+			<a href=# onclick="majeur()"> Can you drink alcohol? </a> </br>
+			<a href=# onclick="langue()"> Hello in your language! </a> </br>
+			<a href=# onclick="boucle()"> Test of a loop: you pick a number x and I count up to x and add all the numbers between 0 and x  </a> </br>
+			<a href=# onclick="play()" > Play the less or more game (the most fun of all these examples) </a> </br>
+			
+		<!--  <img src="france.jpg" onclick ="promptplus()"  id = "fr" />  </br> -->
+		<script type ="text/javascript">
+			<!--
+			var tab= new Array();
+			tab[0]=3;
+			tab[1]=5;
+			tab[2]=1;
+			tab[5]=8;
+			
+			msg=lire(tab);
+			alert(msg);
+			alert(lire2(tab))
+			tab.sort();
+			alert(lire(tab));
+			alert("La moyenne est:" +moyenne(tab))
+			
+				
+			// -->	
+			
+		</script>
+		</div>
+		
+	
+		
+		</script>
+	</body>
+</html>
